@@ -1,8 +1,6 @@
 # My Ball
-----
 ## Description
+A learning project to practice full-stack and cloud engineering principles.  
+Tracks basketball players and user betting activity to promote responsible sports betting.
 
-Creating an app that meshes my love for Basketball and finances. This app will allow you to keep track of the basketball as well as keep up with fantasy and manage the money you put into the sport.
-
-----
 **Author: Noah Muna**
