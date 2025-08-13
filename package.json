@@ -1,0 +1,23 @@
+{
+  "name": "bball-fin.backend",
+  "version": "1.0.0",
+  "description": "A learning project to practice full-stack and cloud engineering principles.   Tracks basketball players and user betting activity to promote responsible sports betting.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mainoahmuna/bball-fin.backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mainoahmuna/bball-fin.backend/issues"
+  },
+  "homepage": "https://github.com/mainoahmuna/bball-fin.backend#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
