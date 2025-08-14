@@ -1,0 +1,23 @@
+meta {
+  name: Get Players List
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://{{localurl}}/players
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "Kevin Durant",
+    "team": "Rockets",
+    "position": "SF"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
