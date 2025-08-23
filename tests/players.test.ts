@@ -16,6 +16,13 @@ describe('GET /players', () => {
     expect(res.statusCode).toBe(200);
     expect(Array.isArray(res.body)).toBe(true);
   });
+
+  test('empty DB returns []', async () => {
+    await prisma.player.deleteMany();
+    const res = await request(app).get('/players');
+    expect(res.statusCode).toBe(200);
+    expect(res.body).toEqual([]);
+  });
 });
 
 describe('POST /players', () => {
