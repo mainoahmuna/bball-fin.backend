@@ -1,5 +1,6 @@
 import express from 'express';
-import playersRouter from './routes/playersRoutes';
+import playerRouter from './routes/playerRoutes';
+import { errorHandler } from './middleware/error';
 
 const app = express();
 
@@ -7,6 +8,9 @@ const app = express();
 app.use(express.json());
 
 // Routes
-app.use('/players', playersRouter);
+app.use('/players', playerRouter);
+
+// Global error handler (should be after all routes)
+app.use(errorHandler);
 
 export default app;

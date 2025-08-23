@@ -10,7 +10,15 @@ generator client {
 model Player {
   id        String   @id @default(uuid())
   name      String
-  team      String
   position  String
+  teamId    Int?
+  team      Team?    @relation(fields: [teamId], references: [id])
   createdAt DateTime @default(now())
+}
+
+model Team {
+  id       Int      @id @default(autoincrement())
+  name     String
+  city     String
+  players  Player[]
 }

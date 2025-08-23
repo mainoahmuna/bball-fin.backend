@@ -1,0 +1,15 @@
+meta {
+  name: Delete player by id
+  type: http
+  seq: 5
+}
+
+delete {
+  url: http://{{localurl}}/players/{{id}}
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}
