@@ -7,7 +7,7 @@
     "dev": "nodemon --watch src --ext ts,js --exec ts-node src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
-    "test": "jest"
+    "test": "npx cross-env DATABASE_URL=\"postgresql://mainoahmuna@localhost:5432/myball_test?schema=public\" jest --runInBand"
   },
   "repository": {
     "type": "git",
@@ -21,8 +21,11 @@
   },
   "homepage": "https://github.com/mainoahmuna/bball-fin.backend#readme",
   "dependencies": {
+    "@prisma/client": "^6.14.0",
     "express": "^5.1.0",
-    "uuid": "^11.1.0"
+    "prisma": "^6.14.0",
+    "uuid": "^11.1.0",
+    "zod": "^4.0.17"
   },
   "devDependencies": {
     "@types/express": "^5.0.3",
@@ -30,6 +33,7 @@
     "@types/node": "^24.3.0",
     "@types/supertest": "^6.0.3",
     "@types/uuid": "^10.0.0",
+    "cross-env": "^10.0.0",
     "jest": "^29.7.0",
     "nodemon": "^3.1.10",
     "supertest": "^7.1.4",

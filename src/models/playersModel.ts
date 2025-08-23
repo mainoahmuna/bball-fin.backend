@@ -1,22 +1,24 @@
-import { v4 as uuidv4 } from 'uuid';
+import { prisma } from '../db';
 
 export interface Player {
   id: string;
   name: string;
   team: string;
   position: string;
+  createdAt: Date;
 }
 
-export type NewPlayer = Omit<Player, 'id'>;
+export type NewPlayer = Omit<Player, 'id' | 'createdAt'>;
 
-const players: Player[] = [];
-
-export const addPlayer = (data: NewPlayer): Player => {
-  const player: Player = { id: uuidv4(), ...data };
-  players.push(player);
+export const addPlayer = async (data: NewPlayer): Promise<Player> => {
+  const player = await prisma.player.create({
+    data: {
+      ...data,
+    },
+  });
   return player;
 };
 
-export const getAllPlayers = (): Player[] => {
-  return players;
+export const getAllPlayers = async (): Promise<Player[]> => {
+ return await prisma.player.findMany();
 };

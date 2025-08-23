@@ -1,5 +1,14 @@
 import request from 'supertest';
 import app from '../src/app';
+import { prisma } from '../src/db';
+
+beforeEach(async () => {
+  await prisma.player.deleteMany();
+});
+
+afterAll(async () => {
+  await prisma.$disconnect();
+});
 
 describe('GET /players', () => {
   test('should return an array and 200', async () => {
@@ -10,7 +19,7 @@ describe('GET /players', () => {
 });
 
 describe('POST /players', () => {
-  const validBody = { name: 'Kevin Durant', team: 'Suns', position: 'SF' };
+  const validBody = { name: 'Kevin Durant', team: 'Rockets', position: 'SF' };
 
   test('given all required fields, should respond 201 and return player with id', async () => {
     const res = await request(app).post('/players').send(validBody);
