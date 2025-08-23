@@ -13,7 +13,7 @@ Make sure you have the following installed:
 git clone https://github.com/mainoahmuna/bball-fin.backend.git
 cd bball-fin.backend
 ```
-2. install dependencies
+2. Install dependencies
 ```bash
 npm install
 ```
@@ -26,12 +26,13 @@ npm run dev
 
 for prod:
 ```bash
-npm run start
+npm run build
+npm start
 ```
-By default, the server runs on http://localhost:8080. You can change this by editing index.js.
+By default, the server runs on http://localhost:8080. You can change this by editing `index.ts`.
 
 ## API Endpoints
-Create Player
+### Create Player
 - *POST* /players
 - BODY (JSON):
 ```json
@@ -41,12 +42,11 @@ Create Player
   "position": "Forward"
 }
 ```
-
 - Response:
-201 Created with the new player object, including an auto-generated id.
-If required fields are missing, returns 400 Bad Request.
+  - 201 Created with the new player object, including an auto-generated id.
+  - If required fields are missing, returns 400 Bad Request.
 
-GET All Players
+### Get All Players
 - *GET* /players
 - Response:
-    - 200 OK with an array of all players.
+  - 200 OK with an array of all players.
